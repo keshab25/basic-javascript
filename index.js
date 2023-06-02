@@ -387,15 +387,22 @@ console.log(typeof String(x));*/
 
 //DOM
 
-const header = document.getElementById("myHeader");
-const subHeader = document.getElementsByClassName("myClass");
-subHeader[0].innerHTML = "Bina dhewa k";
-subHeader[0].style.color= "white";
+// const header = document.getElementById("myHeader");
+// const subHeader = document.getElementsByClassName("myClass");
+// subHeader[0].innerHTML = "Bina dhewa k";
+// subHeader[0].style.color= "white";
 // console.log(header);
-header.innerHTML = "oh no";
-header.style.backgroundColor = "red";
-header.style.color = "white";
-console.log(header);
+// header.innerHTML = "oh no";
+// header.style.backgroundColor = "red";
+// header.style.color = "white";
+// console.log(header);
 
 
 
+
+function myFunc(a,b){
+    return a*b
+}
+
+const ans = myFunc(8,9)
+console.log(ans)
