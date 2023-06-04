@@ -389,7 +389,7 @@ console.log(typeof String(x));*/
 
 // const header = document.getElementById("myHeader");
 // const subHeader = document.getElementsByClassName("myClass");
-// subHeader[0].innerHTML = "Bina dhewa k";
+// subHeader[0].innerHTML="nks";
 // subHeader[0].style.color= "white";
 // console.log(header);
 // header.innerHTML = "oh no";
@@ -400,9 +400,62 @@ console.log(typeof String(x));*/
 
 
 
-function myFunc(a,b){
-    return a*b
-}
+// function myFunc(a,b){
+//     return a*b
+// }
 
-const ans = myFunc(8,9)
-console.log(ans)
+// const ans = myFunc(8,9)
+// console.log(ans)
+
+// console.log(document.body)
+
+//DOM MANIPULATION 
+//let Btn = document.query
+
+const text = document.getElementById("Hello");
+const text1 = document.getElementsByClassName("myclass");
+const mayor = document.getElementsByTagName("span");
+const Btn = document.querySelectorAll("button");
+const clickBtn = document.querySelector("#click");
+
+// console.log(clickBtn.getAttribute("id"));
+// clickBtn.setAttribute("class","meroClass");
+function showWhenClick(){
+    const h1 = document.createElement("h1");
+h1.innerHTML = "Nepal has adopted non-alliagnance goreign policy";
+document.body.prepend(h1);
+}
+function deleteOnes() {
+    const h1= document.querySelector("h1");
+    h1.remove();
+}
+clickBtn.onclick = showWhenClick;
+Btn[1].onclick = deleteOnes;
+//prepend le frist ma print garxa and append le last ma
+// console.log(Btn);
+
+clickBtn.style.backgroundColor = "green";
+clickBtn.style.color = "white";
+clickBtn.style.border = "none";
+clickBtn.style.cursor = "pointer";
+clickBtn.style.padding = "10px";
+clickBtn.style.margin = "5px";
+
+Btn[1].style.backgroundColor = "red";
+Btn[1].style.color = "white";
+Btn[1].style.border = "none";
+Btn[1].style.cursor = "pointer";
+Btn[1].style.padding = "10px";
+Btn[1].style.margin = "5px";
+
+
+mayor[0].innerHTML = "Harka rai";
+mayor[1].innerHTML = "Balen shah";
+// console.log(text1[0]);
+text1[0].innerHTML = "<h2>im goood what about you</h2>";
+text1[0].style.backgroundColor = "blue";
+text1[0].style.color = "red";
+
+text.innerHTML = "<h1>How is your life</h1>";
+text.style.backgroundColor = "red";
+text.style.color = "white";
