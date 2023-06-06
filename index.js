@@ -412,50 +412,263 @@ console.log(typeof String(x));*/
 //DOM MANIPULATION 
 //let Btn = document.query
 
-const text = document.getElementById("Hello");
-const text1 = document.getElementsByClassName("myclass");
-const mayor = document.getElementsByTagName("span");
-const Btn = document.querySelectorAll("button");
-const clickBtn = document.querySelector("#click");
+// const text = document.getElementById("Hello");
+// const text1 = document.getElementsByClassName("myclass");
+// const mayor = document.getElementsByTagName("span");
+// const Btn = document.querySelectorAll("button");
+// const clickBtn = document.querySelector("#click");
 
 // console.log(clickBtn.getAttribute("id"));
 // clickBtn.setAttribute("class","meroClass");
-function showWhenClick(){
-    const h1 = document.createElement("h1");
-h1.innerHTML = "Nepal has adopted non-alliagnance goreign policy";
-document.body.prepend(h1);
-}
-function deleteOnes() {
-    const h1= document.querySelector("h1");
-    h1.remove();
-}
-clickBtn.onclick = showWhenClick;
-Btn[1].onclick = deleteOnes;
+// function showWhenClick(){
+//     const h1 = document.createElement("h1");
+// h1.innerHTML = "Nepal has adopted non-alliagnance goreign policy";
+// document.body.prepend(h1);
+// }
+// function deleteOnes() {
+//     const h1= document.querySelector("h1");
+//     h1.remove();
+// }
+// clickBtn.onclick = showWhenClick;
+// Btn[1].onclick = deleteOnes;
 //prepend le frist ma print garxa and append le last ma
 // console.log(Btn);
 
-clickBtn.style.backgroundColor = "green";
-clickBtn.style.color = "white";
-clickBtn.style.border = "none";
-clickBtn.style.cursor = "pointer";
-clickBtn.style.padding = "10px";
-clickBtn.style.margin = "5px";
+// clickBtn.style.backgroundColor = "green";
+// clickBtn.style.color = "white";
+// clickBtn.style.border = "none";
+// clickBtn.style.cursor = "pointer";
+// clickBtn.style.padding = "10px";
+// clickBtn.style.margin = "5px";
 
-Btn[1].style.backgroundColor = "red";
-Btn[1].style.color = "white";
-Btn[1].style.border = "none";
-Btn[1].style.cursor = "pointer";
-Btn[1].style.padding = "10px";
-Btn[1].style.margin = "5px";
+// Btn[1].style.backgroundColor = "red";
+// Btn[1].style.color = "white";
+// Btn[1].style.border = "none";
+// Btn[1].style.cursor = "pointer";
+// Btn[1].style.padding = "10px";
+// Btn[1].style.margin = "5px";
 
 
-mayor[0].innerHTML = "Harka rai";
-mayor[1].innerHTML = "Balen shah";
-// console.log(text1[0]);
-text1[0].innerHTML = "<h2>im goood what about you</h2>";
-text1[0].style.backgroundColor = "blue";
-text1[0].style.color = "red";
+// mayor[0].innerHTML = "Harka rai";
+// mayor[1].innerHTML = "Balen shah";
+// // console.log(text1[0]);
+// text1[0].innerHTML = "<h2>im goood what about you</h2>";
+// text1[0].style.backgroundColor = "blue";
+// text1[0].style.color = "red";
 
-text.innerHTML = "<h1>How is your life</h1>";
-text.style.backgroundColor = "red";
-text.style.color = "white";
+// text.innerHTML = "<h1>How is your life</h1>";
+// text.style.backgroundColor = "red";
+// text.style.color = "white";
+
+
+//Advanced array methods
+// const arr = [3,5,6,2,1,8,9,7];
+
+// arr.find((value,index)=>{
+//     if(value ===6){
+//         console.log("6 existed!");
+//     }
+
+// });
+
+// const result = myFunc(4,5);
+// console.log(result);
+
+//find method
+// arr.find((value,index)=>console.log(value,index));
+// const newArr= arr.find((value,index)=>value>5);
+// console.log(newArr);
+
+//filter
+// const newArr= arr.filter((value,index)=>value>5);
+// console.log(newArr);
+
+//sort
+// const newArr= arr.sort((a,b)=>a-b);
+// console.log(newArr);
+
+//flat
+// const subArr = [
+//     [1,,2,3,4],
+//     [5,6,7,8],
+//     [9,10,11,12]];
+// const newArr = subArr.flat();
+// console.log(newArr);
+
+//some
+// const result = arr.some((value,index)=>value>6);
+// console.log(result);
+
+//every
+// const result = arr.every((value,index)=>value>6);
+// console.log(result);
+
+//foreach
+// const result = arr.foreach((value,index)=> (value += 5));
+// console.log(result);
+// console.log(arr);
+
+//map
+// const result = arr.map((value,index)=> (value += 5));
+// console.log(result);
+// console.log(arr);
+
+//reduce
+// const result = arr.reduce(
+//     (prevValue,currentValue)=> prevValue + currentValue
+// );
+// console.log(result);
+//  console.log(arr);
+
+
+//events
+//add event listner
+// const header = document.querySelector("#header");
+// const Box = document.querySelector("#box");
+// const Btn = document.querySelector("#listen");
+// const Input = document.querySelector("input");
+
+// Input.addEventListener("change",(e) => {
+//     console.log(event.target.value);
+// });
+
+// Btn.classList.add("classForDiv");
+
+// Btn.addEventListener("click",() => {
+//     header.innerHTML = "prachanda lee bhaisi lyayo";
+//     Box.classList.add("classForBox");
+//     // console.log("clicked");
+// });
+
+// Btn.addEventListener("contextmenu",(e) =>{
+//     e.preventDefault();
+//     Btn.style.backgroundColor = "purple";
+// });
+
+// Box.addEventListener("mouseover",() => {
+//     header.style.backgroundColor = "Orange";
+//     header.style.color = "white";
+//     Btn.style.transform = "scale(1,2)";
+// });
+
+// Box.addEventListener("mouseout",()=>{
+//     header.style.backgroundColor = "";
+//     header.style.color = "";
+//     Btn.style.transform = "";
+//     // Btn.style.filter = "";
+
+// });
+
+// Box.addEventListener("dblclick",() =>{
+//     document.body.style.backgroundColor = "black";
+// });
+
+// Box.addEventListener("click",() =>{
+//     document.body.style.backgroundColor = "#fff";
+// });
+
+// window.addEventListener("contextmenu",(e) =>{
+//     e.preventDefault();
+//     Btn.style.filter = "blur(10px)";
+// });
+
+
+
+//math object in javascript
+//to generate otp code 
+
+// const result = Math.round(4.5);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.floor(4.5);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.ceil(4.1);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.trunc(4.1);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.pow(2,3);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.sqrt(25);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.random();
+// document.write(result);
+// console.log(result);
+
+//convert num into degree 
+// const result = Math.tan((45*Math.PI)/180);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.sin((90*Math.PI)/180);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.log2(8);
+// document.write(result);
+// console.log(result);
+
+// const result = Math.log10(100);
+// document.write(result);
+// console.log(result);
+
+
+// const result = new Date();
+// console.log(result);
+// document.write(result);
+
+// const result = new Date();
+// console.log(result.getDay());
+// document.write(result.getDay());
+
+// const result = new Date();
+// console.log(result.getFullYear());
+// document.write(result.getFullYear());
+
+//local storage
+// let key = prompt("enter key you want to set");
+// let value = prompt("enter value you want to set");
+
+// localStorage.setItem(key,value)
+// console.log('the value at ${key} is $(localStorage.getItem(key)}')
+
+const Input = document.querySelector("input");
+const AddBtn = document.querySelector("#add");
+const BtnLogout = document.querySelector("#clear");
+
+const AddWebstorage = () => {
+    localStorage.setItem("key",JSON.stringify(
+        {
+            name:"Ram",
+            age:23,
+            gender:"Male", 
+            isMarried: false,
+          })
+    ); 
+};
+AddBtn.addEventListener("click",AddWebstorage);
+
+BtnLogout.addEventListener("click",() => {
+    localStorage.clear();
+});
+if(localStorage.getItem("key")){
+    console.log(JSON.parse(localStorage.getItem("key")));  
+}
+
+
+
+
+
+
+
+
