@@ -642,28 +642,28 @@ console.log(typeof String(x));*/
 // localStorage.setItem(key,value)
 // console.log('the value at ${key} is $(localStorage.getItem(key)}')
 
-const Input = document.querySelector("input");
-const AddBtn = document.querySelector("#add");
-const BtnLogout = document.querySelector("#clear");
+// const Input = document.querySelector("input");
+// const AddBtn = document.querySelector("#add");
+// const BtnLogout = document.querySelector("#clear");
 
-const AddWebstorage = () => {
-    localStorage.setItem("key",JSON.stringify(
-        {
-            name:"Ram",
-            age:23,
-            gender:"Male", 
-            isMarried: false,
-          })
-    ); 
-};
-AddBtn.addEventListener("click",AddWebstorage);
+// const AddWebstorage = () => {
+//     localStorage.setItem("key",JSON.stringify(
+//         {
+//             name:"Ram",
+//             age:23,
+//             gender:"Male", 
+//             isMarried: false,
+//           })
+//     ); 
+// };
+// AddBtn.addEventListener("click",AddWebstorage);
 
-BtnLogout.addEventListener("click",() => {
-    localStorage.clear();
-});
-if(localStorage.getItem("key")){
-    console.log(JSON.parse(localStorage.getItem("key")));  
-}
+// BtnLogout.addEventListener("click",() => {
+//     localStorage.clear();
+// });
+// if(localStorage.getItem("key")){
+//     console.log(JSON.parse(localStorage.getItem("key")));  
+// }
 
 
 
