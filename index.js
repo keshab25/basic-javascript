@@ -642,33 +642,603 @@ console.log(typeof String(x));*/
 // localStorage.setItem(key,value)
 // console.log('the value at ${key} is $(localStorage.getItem(key)}')
 
-const Input = document.querySelector("input");
-const AddBtn = document.querySelector("#add");
-const BtnLogout = document.querySelector("#clear");
+// const Input = document.querySelector("input");
+// const AddBtn = document.querySelector("#add");
+// const BtnLogout = document.querySelector("#clear");
 
-const AddWebstorage = () => {
-    localStorage.setItem("key",JSON.stringify(
-        {
-            name:"Ram",
-            age:23,
-            gender:"Male", 
-            isMarried: false,
-          })
-    ); 
+// const AddWebstorage = () => {
+//     localStorage.setItem("key",JSON.stringify(
+//         {
+//             name:"Ram",
+//             age:23,
+//             gender:"Male", 
+//             isMarried: false,
+//           })
+//     ); 
+// };
+// AddBtn.addEventListener("click",AddWebstorage);
+
+// BtnLogout.addEventListener("click",() => {
+//     localStorage.clear();
+// });
+// if(localStorage.getItem("key")){
+//     console.log(JSON.parse(localStorage.getItem("key")));  
+// }
+
+
+//oop
+//constucture fun -yeuta fun bata multiple object at same time 
+//object vitra value - object object vitra fun vaye method
+// function person(name,age){
+//     this.name = name;
+//     this.age = age;
+
+//     this.greet = function() {
+//         console.log(
+//             'Hello everyone my name is :${this.name}.and my age is:${this.age}'       
+//              );
+//     };
+// }
+// const person1 = new person("Ram",23);
+// const person2 = new person("hari",25);
+// const person3 = new person("shyam",26);
+
+
+// console.log(person1,person2,person3);
+// person1.greet();
+
+
+
+// function BankAccount(customerName,balance = 0){
+//     this.customerName = customerName;
+//     this.accountNumber = Date.now();
+//     this.balance = balance;
+
+//     this.deposit = function(amount){
+//         this.balance += amount;
+//     };
+//     this.withdraw = function(amount){
+//         this.balance -= amount;
+//     };
+// }
+
+// // const ramAccount = new BankAccount("Ram",5000);
+// // const shyamAccount = new BankAccount("shyam",10000);
+
+// // shyamAccount.deposit(3000);
+// // shyamAccount.withdraw(3000);
+
+// // console.log(ramAccount ,shyamAccount);
+
+// const addForm = document.querySelector("#addAccount");
+// const customerName = document.querySelector("#customerName");
+// const balance = do+cument.querySelector("#balance");
+
+// const depositForm = document.querySelector("#depositAccount");
+// const accountNumber = document.querySelector("#accountNumber");
+// const amount = document.querySelector("#amount");
+
+
+
+// let accounts = [];
+// addForm.addEventListener("submit",(e)=>{
+//     e.preventDefault()
+
+//     const newAccount = new BankAccount(customerName.Value, +balance.value)
+//     accounts.push(newAccount);
+//     console.log(accounts);
+// });
+
+// depositForm.addEventListener("submit",(e) => {
+//     e.preventDefault();
+
+//     const Account = accounts.find(
+//         (value,index) => value.accountNumber === +accountNumber.value
+//     );
+//     if (!Account) return alert("account not found!");
+//     Account.deposit(+amount.value);
+//     console.log(accounts);
+// });
+
+
+// function BankAccount(customerName,balance=0){
+//     this.customerName = customerName;
+//     this.accountNumber = Date.now();
+//     this.balance = balance;
+ 
+//     }
+
+//     BankAccount.prototype.deposit = function(amount){
+//         this.balance += amount;
+//      };
+//      BankAccount.prototype.withdraw = function(amount){
+//         this.balance -= amount;
+//      };
+
+
+//      const ramAccount = new BankAccount("Ram",4000);
+//      ramAccount.deposit(3000);
+//      console.log(ramAccount);
+
+
+//class
+// class BankAccount{
+//     constructor(custmerName,balance=0){
+//         this.customerName = custmerName;
+//         this.accountNumber = Date.now();
+//         this.balance = balance;
+//     }
+
+//     deposit(amount){
+//         this.balance += amount;
+//     }
+//     withdraw(amount){
+//         this.balance -= amount;
+//     }
+
+// }
+
+// class SavingAccount extends BankAccount{
+//     constructor(custmerName, balance=0){
+//         super(custmerName,balance);
+//     }
+//     transactionLimit = 50000;
+
+//     takePersonLoan(amount){
+//         console.log('Taking personal loanis: ${amount}');
+//     }
+// }
+
+// // ramAccount.deposit(2000);
+// // ramAccount.takePersonLoan(40000);
+// // // const sitaAccount = new SavingAccount("Sita",4000);
+
+// // // sitaAccount.deposit(3000);
+// // console.log(ramAccount);
+// // // console.log(sitaAccount);
+
+
+
+// class CurrentAccount extends BankAccount{
+//     constructor(custmerName, balance=0){
+//         super(custmerName,balance);
+//     }
+//     transactionLimit = 100000;
+
+    
+// }
+
+// const ramAccount = new CurrentAccount("Ram",4000);
+// const shyamAccount = new SavingAccount("Shyam",5000);
+
+
+// console.log(ramAccount);
+// console.log(shyamAccount);
+
+
+// class BankAccount{
+//     customerName;
+//     accountNumber;
+//     #balance = 0;
+//     constructor(customerName = customerName, balance=0){
+//         this.customerName = customerName;
+//         this.accountNumber = Date.now();
+//         this.#balance = balance;
+//     }
+//     deposit(amount){
+//         this.#balance += amount;
+//     }
+
+//     withdraw(amount){
+//         this.#balance -= amount;
+//     }
+//     setBalance(newbalance){
+//         if(isNaN(newbalance)){
+//             throw new Error("Number must be valid!")
+//         }
+//         this.#balance = newbalance;
+//     }
+
+//     getBalance(){
+//         return this.#balance
+//     }
+    
+// }
+
+
+// class CurrentAccount extends BankAccount {
+//     transactionLimit =  50000;
+//     constructor(customerName,balance=0){
+//         super(customerName,balance);
+//     }
+
+//     #calculateInterest(amount) {
+//         console.log(`calculating amount interest is : ${amount}`);
+
+//         const interest = amount*0.05;
+//         console.log(`calculating amount interest is : ${interest}`);
+//     }
+
+
+//     takeBusinessLoan(amount) {
+//         this.#calculateInterest(amount);
+//         console.log(`Taking business loan is : ${amount}`);
+//     }
+// }
+
+// const ramAccount = new CurrentAccount("Ram",3000);
+// // ramAccount.setBalance(9000);
+// // console.log(ramAccount.getBalance());
+
+// ramAccount.takeBusinessLoan(20000);
+// console.log(ramAccount);
+
+
+//static property and method
+
+// class Auth{
+//     static dbEmail = "email@gmail.com";
+//     static dbPassword = "password";
+//     static dbToken = "sjdbfkdf";
+// }
+
+// console.log(Auth.dbEmail);
+
+
+// class person {
+//     constructor(name,age,income){
+//         this.name = name;
+//         this.age = age;
+//         this.income = income;
+//     }
+
+//     static compareAge(a,b){
+//         return a.age - b.age;
+//     }
+
+//     static compareIncome(a,b){
+//         return a.income - b.income;
+//     }
+
+//     static compareFilter(value,index){
+//         return value.income>10000;
+//     }
+
+
+// }
+
+// const user1 = new person("Ram",58,4000);
+// const user2 = new person("Sita",20,50000);
+// const user3 = new person("Shyam",38,6000);
+
+// const users = [user1,user2,user3];
+
+// const resultSortByAge = users.sort(person.compareAge);
+// console.log(resultSortByAge);
+
+// const resultFilter = users.filter(person.compareFilter);
+// console.log(resultFilter);
+
+// const result = users.sort((a,b) => a.age - b.age);
+// const result = users.sort(person.compareByAge);
+// console.log(result);
+
+// const result = users.filter(person.compareByFilter);
+// const result = users.filter(person => person.compareByFilter());
+// console.log(result);
+
+// class Person {
+//     constructor(name, age, income) {
+//         this.name = name;
+//         this.age = age;
+//         this.income = income;
+//     }
+
+//     static compareAge(a, b) {
+//         return a.age - b.age;
+//     }
+
+//     static compareIncome(a, b) {
+//         return a.income - b.income;
+//     }
+
+//     static compareFilter(value, index) {
+//         return value.income > 10000;
+//     }
+// }
+
+// const user1 = new Person("Ram", 68, 4000);
+// const user2 = new Person("Sita", 20, 8000);
+// const user3 = new Person("Shyam", 48, 6000);
+
+// const users = [user1, user2, user3];
+
+// const result = users.sort(person => person.compareByAge);
+
+// // const result = users.filter(person => Person.compareFilter);
+// console.log(result);
+
+
+// js is single thread synchronous - default behaviour of js
+
+// function add(a,b,callBack){
+//     const result = a+b;
+//     callBack(result);
+// }
+
+// function displaySum(ans){
+//     console.log(`The sum of two number is : ${ans}`);
+
+// }
+
+// const ans = add(4,8,displaySum);
+// console.log(ans);
+
+
+//synchronously
+// let myArr = [7,8,3,4,9,2,1];
+// function calculation(arr = [],cb){
+//     let ans = [];
+//     for(let i = 0; i<arr.length;i++){
+//         ans.push(cb(arr[i]));
+//     }
+//     console.log(ans);
+// }
+
+// function multiply(a){
+//     return a*10
+// }
+// function divide(a){
+//     return a/10
+// }
+
+// calculation(myArr,multiply);
+// calculation(myArr,divide);
+
+// calculation(myArr,(a) => a*10);
+// calculation(myArr,(a) => a/10);
+// calculation(myArr,(a) => a+10);
+// calculation(myArr,(a) => a-10);
+
+// let myArr = [7,8,3,4,9,2,1];
+// function calculation(arr = [],cb){
+//     let ans = [];
+//     for(let i = 0; i<arr.length;i++){
+//         ans.push(cb(arr[i]));
+//     }
+//     console.log(ans);
+
+// calculation(myArr,(a) => a*10);
+// calculation(myArr,(a) => a/10);
+// calculation(myArr,(a) => a+10);
+// calculation(myArr,(a) => a-10);
+
+
+//asynchronously
+
+// let personList = [];
+// const fetchedData = (callBack) =>{
+//     setTimeout((callBack)=>{
+//         personList.push(
+//             {id: 1, name:"Ram", age:23},
+//             {id: 2, name:"shyam", age:25},
+//             {id: 3, name:"gita", age:30},
+//             {id: 4, name:"Hari", age:60},
+//         );
+//         callBack();
+//         console.log(personList);
+//     },4000,
+//     callBack
+//     );
+//     };
+//     console.log(personList);
+
+// // fetchedData();
+// // console.log(personList);
+
+
+// const displayNmae = ()=>{
+//     setTimeout(() => {
+//         for(let i = 0; i<personList.length;i++){
+//             const p = document.createElement("p");
+//             p.innerHTML = personList[i].name;
+//             document.body.append(p);
+//         }
+//     },1000,
+    
+//     );
+// };
+
+// fetchedData(displayNmae);
+
+
+
+//promices - is a object handle asynchronous task during api 
+
+// const ans = new Promise((resolve,reject) => {
+//     resolve("promice fulfilled");
+
+// });
+// ans.then((message)=> console.log(message));
+
+// const ans = new Promise((resolve,reject) => {
+//     let success = true;
+//     if(success) resolve("promice fulfilled");
+//     else reject("Internal server error");
+
+// });
+// ans
+// .then((message)=> console.log(message))
+// .Catch((err)=> console.log(err))
+// .finally(()=> console.log("Both"));
+
+
+// const arr = [];
+
+// const fetchedData = ()=> {
+//     return new Promise((resolve,reject) => {
+//         setTimeout(()=>{
+//             arr.push({name: "ram"});
+//             if(arr.length > 0) resolve("Data fetched!");
+//             else reject ("some technical error");
+//         },4000);
+//     });
+// };
+
+// fetchedData(arr)
+// .then((msg) => console.log(msg))
+// .catch((err) => console.log(err));
+
+// const URL = "https://catfact.ninja/fact";
+// const h1 = document.querySelector("h1")
+
+// const fetchedData = async()=>{
+//    try {
+//     const res =  await fetch(URL);
+//    const data = await res.json();
+// h1.innerHTML = data.fact;
+//    } catch (error) {
+//     console.log(error);
+//    }
+// };
+// fetchedData();
+
+
+// const fetchedData = ()=>{
+   
+//     fetch(URL).then((res) => res.json())
+//     .then((data) => (h1.innerHTML = data.fact)).catch((err)=>console.log(err))
+// };
+
+// fetchedData();
+
+
+
+// console.log(navigator);
+// navigator.geolocation.getCurrentPosition((a) => console.log(a.coords))
+
+// console.log(screen)
+
+// console.log(history)
+// console.log(location.protocol);
+// console.log(location.port);
+// console.log(location.host);
+// console.log(location.hostname);
+
+// console.log(location.href);
+// console.log(location.search);
+
+
+// const obj = {
+//    name : "John",
+//    printName: function(){
+//       console.log(this.name);
+//    }
+//    obj.printName();
+
+//    const obj1 = {
+//       name : "John",
+//       .printName
+//    }
+   
+// }
+
+
+//normal fn -acess the argument
+//arrow fn - can not access the the argument
+
+//hoisting 
+
+// function myFunc(){
+//    console.log("Hello world")
+// }
+
+
+
+//project
+
+const temperatureField = document.querySelector(".weather1")
+const cityField = document.querySelector(".weather2 p")
+const dateField = document.querySelector(".weather2 span")
+const emojiField = document.querySelector(".weather3 img")
+const weatherField = document.querySelector(".weather3 span")
+const form = document.querySelector("form")
+const input = document.querySelector(".searchField")
+
+let target = "kathmandu"
+const fetchedData = async() =>{
+   try {
+      const res = await fetch(
+         `https://api.weatherapi.com/v1/current.json?key=8074945cf25549a0a8492144231406&q=${target}`
+         );
+   
+   
+   const data = await res.json();
+   console.log(data);
+   
+   //d structure concept
+   const {current:{temp_c,condition:{icon,text}},location:{name,localtime}} = data;
+   
+   temperatureField.innerHTML = `${temp_c}&deg;c`;
+   cityField.innerHTML = name;
+   emojiField.src = icon;
+   weatherField.innerHTML = text;
+   
+   const exactTime = localtime.split(" ")[1];
+   const exactDate = localtime.split(" ")[0];
+   console.log(exactTime);
+   
+   const currentDate = new Date();
+   const currentDay = getTodaysDay(currentDate.getDay());
+   
+   dateField.innerText = `${exactTime} -${currentDay} ${exactDate}`;
+   } catch (error) {
+      alert("location not found");
+   }
 };
-AddBtn.addEventListener("click",AddWebstorage);
 
-BtnLogout.addEventListener("click",() => {
-    localStorage.clear();
+fetchedData(target);
+
+form.addEventListener("submit",(e)=>{
+   e.preventDefault();
+   if (input.value.trim() === "") {
+      alert("field must be filled!");
+      
+   } else {
+      target = input.value;
+      fetchedData(target);
+      
+   }
 });
-if(localStorage.getItem("key")){
-    console.log(JSON.parse(localStorage.getItem("key")));  
+
+function getTodaysDay(num){
+   switch(num){
+      case 0:
+         return "Sunday";
+      
+      case 1:
+         return "Monday";
+
+         case 2:
+         return "Tuesday";
+      
+      case 3:
+         return "Wednesday";
+
+         case 4:
+         return "Thursday";
+
+         case 5:
+         return "Friday";
+      
+      case 6:
+         return "Saturday";
+
+         default:
+            return "Invalid"
+
+
+   }
 }
-
-
-
-
-
-
 
 
